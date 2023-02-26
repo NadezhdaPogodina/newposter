@@ -1,11 +1,14 @@
 
 package ru.netology.newposter.services;
+
 public class Manager {
 
     private String[] films = new String[0];
+
     private int limit;
 
     public Manager() {
+
         this.limit = 10;
     }
 
@@ -47,8 +50,8 @@ public class Manager {
         }
         return tmp;
     }
-}
 
+}
 
 
 

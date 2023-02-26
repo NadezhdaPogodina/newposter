@@ -5,6 +5,7 @@ import ru.netology.newposter.services.Manager;
 
 public class ManagerTest {
 
+
     @Test
     public void test() {
         Manager manager = new Manager();
@@ -22,7 +23,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void newTest() {
+    public void secondTest() {
 
         Manager manager = new Manager(6);
 
@@ -34,13 +35,72 @@ public class ManagerTest {
         manager.add("Film6");
 
         String[] expected = {"Film6", "Film5", "Film4", "Film3", "Film2", "Film1"};
-        String [] actual = manager.findLast();
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void thirdTest() {
+
+        Manager manager = new Manager();
+
+        manager.add("Film1");
+        manager.add("Film2");
+        manager.add("Film3");
+        manager.add("Film4");
+        manager.add("Film5");
+
+        String[] expected = {"Film5", "Film4", "Film3", "Film2", "Film1"};
+        String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
 
-}
+    @Test
+    public void newTest() {
 
+        Manager manager = new Manager();
+
+        manager.add("Film1");
+        manager.add("Film2");
+        manager.add("Film3");
+        manager.add("Film4");
+        manager.add("Film5");
+        manager.add("Film6");
+        manager.add("Film7");
+        manager.add("Film8");
+        manager.add("Film9");
+        manager.add("Film10");
+        manager.add("Film11");
+
+        String[] expected = {"Flm11", "Film10", "Film9", "Film8", "Film7", "Film6", "Film5", "Film4", "Film3", "Film2", "Film1"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void Test() {
+
+        Manager manager = new Manager();
+
+        manager.add("Film1");
+        manager.add("Film2");
+        manager.add("Film3");
+        manager.add("Film4");
+        manager.add("Film5");
+        manager.add("Film6");
+        manager.add("Film7");
+        manager.add("Film8");
+        manager.add("Film9");
+        manager.add("Film10");
+
+
+        String[] expected = {"Film10", "Film9", "Film8", "Film7", "Film6", "Film5", "Film4", "Film3", "Film2", "Film1"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+}
 
 
 
