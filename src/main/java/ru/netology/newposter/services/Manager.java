@@ -7,12 +7,17 @@ public class Manager {
 
     private int limit;
 
+    private int resultLength;
+
     public Manager() {
 
         this.limit = 10;
+
+     //  this.resultLength = 0;
     }
 
     public Manager(int limit) {
+
         this.limit = limit;
     }
 
@@ -35,23 +40,41 @@ public class Manager {
 
 
     public String[] findLast() {
-        int resultLength;
 
-        if (films.length < limit) {
-            resultLength = films.length;
+       // int resultLength;
 
-        } else {
-            resultLength = limit;
+
+            if (films.length < limit) {
+                resultLength = films.length;
+
+            } else {
+
+                resultLength = limit;
+            }
+
+            String[] tmp = new String[limit];
+            for (int i = 0; i < tmp.length; i++) {
+                tmp[i] = films[films.length - 1 - i];
+            }
+            return tmp;
         }
 
-        String[] tmp = new String[limit];
-        for (int i = 0; i < tmp.length; i++) {
-            tmp[i] = films[films.length - 1 - i];
+        public int getResultLength(){
+        return resultLength;
         }
-        return tmp;
+        public void setResultLength(int films){
+            if (films < limit) {
+
+                resultLength = films;
+
+            } else {
+
+                resultLength = limit;
+            }
+        }
+
     }
 
-}
 
 
 

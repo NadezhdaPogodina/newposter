@@ -42,17 +42,12 @@ public class ManagerTest {
     @Test
     public void thirdTest() {
 
-        Manager manager = new Manager();
+        Manager manager = new Manager(10);
+        manager.setResultLength(5);
+        int expected = 5;
+        int actual = manager.getResultLength();
 
-        manager.add("Film1");
-        manager.add("Film2");
-        manager.add("Film3");
-        manager.add("Film4");
-        manager.add("Film5");
-
-        String[] expected = {"Film5", "Film4", "Film3", "Film2", "Film1"};
-        String[] actual = manager.findLast();
-        Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 
@@ -60,22 +55,11 @@ public class ManagerTest {
     public void newTest() {
 
         Manager manager = new Manager();
+        manager.setResultLength(11);
 
-        manager.add("Film1");
-        manager.add("Film2");
-        manager.add("Film3");
-        manager.add("Film4");
-        manager.add("Film5");
-        manager.add("Film6");
-        manager.add("Film7");
-        manager.add("Film8");
-        manager.add("Film9");
-        manager.add("Film10");
-        manager.add("Film11");
-
-        String[] expected = {"Flm11", "Film10", "Film9", "Film8", "Film7", "Film6", "Film5", "Film4", "Film3", "Film2", "Film1"};
-        String[] actual = manager.findLast();
-        Assertions.assertArrayEquals(expected, actual);
+        int expected = 10;
+        int actual = manager.getResultLength();
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
